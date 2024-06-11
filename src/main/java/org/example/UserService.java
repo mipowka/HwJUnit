@@ -9,7 +9,7 @@ public class UserService {
         this.users = new User[15];
     }
 
-    boolean addUsers(User[] users,User user) {
+    boolean addUsers(User user) {
         boolean add = false;
         for (int i = 0; i < users.length; i++) {
             if (users[i]==null){
@@ -22,7 +22,7 @@ public class UserService {
         return add;
     }
 
-    boolean cleanAll(User [] users){
+    boolean cleanAll(){
         boolean clean = false;
         for (int i = 0; i < users.length; i++) {
             users[i]=null;
@@ -32,30 +32,27 @@ public class UserService {
         return clean;
     }
 
-    int countUsers(User [] users){
+    int countUsers(){
         int count = 0;
         for (User user : users) {
             if (user != null) {
                 count += 1;
-
             }
         }
         System.out.println(count);
         return count;
     }
 
-    User idUser(User [] users, long id){
-        User userTest = null;
+    User idUser(long id){
         for (User user : users) {
             if (user != null && id == user.getId()) {
-                userTest = user;
-                System.out.println(user);
+                return user;
             }
         }
-        return userTest;
+        return null;
     }
 
-    boolean indexUser(User [] users, int index){
+    boolean indexUser(int index){
         boolean userIndex = false;
         for (int i = 0; i < users.length; i++) {
             if (i == index) {
@@ -67,7 +64,7 @@ public class UserService {
         return userIndex;
     }
 
-    boolean boolId(User [] users, long id){
+    boolean boolId(long id){
         boolean bool = false;
         for (User user : users) {
             if (user != null && user.getId() == id) {

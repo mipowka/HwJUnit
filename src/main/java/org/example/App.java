@@ -11,11 +11,11 @@ public class App
         System.out.println( "Hello World!" );
         User[] users = new User[15];
         UserService userService = new UserService(users);
-        userService.addUsers(users,new User(1,"ann", "bann"));
-        userService.cleanAll(users);
-        userService.countUsers(users);
-        userService.idUser(users,2);
-        userService.indexUser(users,0);
-        userService.boolId(users,2);
+        userService.addUsers(new User(1,"ann", "bann"));
+        userService.cleanAll();
+        userService.countUsers();
+        userService.idUser(2);
+        userService.indexUser(0);
+        userService.boolId(2);
     }
 }
